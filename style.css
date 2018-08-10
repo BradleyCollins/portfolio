@@ -14,7 +14,7 @@ header {
 	grid-column-start: 1;
 	grid-column-end: 6;
 	grid-row-start: 2;
-	background: url("images/banner_image.jpg") no-repeat center;
+	background: url("images/banner_image2.jpg") no-repeat center;
 	background-size: cover;
 	height: 600px;
 }
