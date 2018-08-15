@@ -13,14 +13,26 @@ body {
 }
 
 header {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
 	grid-area: header;
 	background: red;
+	height: 50px;
 }
 
 header a {
 	text-decoration: none;
 	font-size: 1.8em;
 	font-weight: bold;
+	justify-self: center;
+	align-self: center;
+	color: black;
+}
+
+#nav_image {
+	width: 40px;
+	justify-self: center;
+	align-self: center;
 }
 
 .container {
@@ -28,30 +40,49 @@ header a {
 	display: grid;
 	grid-template-columns: 66% auto;
 	padding: 4em 1em;
+	background: url("images/banner_image2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 300px;
 }
 
-#banner_image {
-	width: 250px;
-	justify-self: left;
+#banner_content h1 {
+	color: white;
+	font-size: 50px;
 }
+
+#banner_content p {
+	color: white;
+	font-size: 25px;
+}
+
+#banner_content {
+	justify-self: center;
+	align-self: center;
+}
+
 
 .about {
 	grid-area: body;
+	display: grid;
+	grid-template-columns: 100px 1fr 100px;
+	grid-template-rows: auto;
 	background: red;
 }
 
-/*.about h2, p {
-	margin-left: 20px;
-}*/
+.about h2 {
+	grid-column-start: 2;
+}
+
+.about p {
+	grid-column-start: 2;
+	grid-row-start: 2;
+}
 
 .portfolio {
 	grid-area: content;
 	border-bottom: 1px solid black;
 }
-
-/*.portfolio h2 {
-	margin-left: 20px;
-}*/
 
 .portfolio ul {
 	display: grid;
@@ -64,6 +95,7 @@ header a {
 
 .portfolio ul li {
 	padding: 2em;
+	align-self: center;
 }
 
 .portfolio ul li span {
@@ -72,23 +104,60 @@ header a {
 	margin-bottom: 1em;
 }
 
+.port_image {
+	width: 400px;
+	align-self: center;
+}
+
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	align-self: center;
+	margin-left: 32%;
+}
+
 .contact {
 	grid-area: contact;
 }
 
 footer {
 	margin: 20px 0 20px 0;
-	height: 100px;
+	height: 50px;
 }
 
-@media only screen and (max-width: 500px) {
+
+
+@media only screen and (max-width: 600px) {
 	.portfolio ul {
 		grid-template-columns: auto;
 		grid-template-rows: auto;
+	}
+	.portfolio ul li {
+		padding: 2em 5em 2em 1em;
+	}
+	.button {
+		margin-left: 23%;
 	}
 	.container {
 		grid-template-columns: auto;
 		grid-template-rows: auto;
 		text-align: center;
 	}
+	.about {
+		grid-template-columns: 20px 1fr 20px;
+		grid-template-rows: auto;
+	}
+	.port_image {
+		width: 278px;
+	}
+	/*header {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+	}*/
 }
